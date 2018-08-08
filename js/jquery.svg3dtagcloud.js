@@ -234,11 +234,37 @@ THE SOFTWARE.
                     entry.element = document.createElementNS( svgNS, 'text' );
                     entry.element.setAttribute( 'x', 0 );
                     entry.element.setAttribute( 'y', 0 );
-                    entry.element.setAttribute( 'fill', settings.fontColor );
-                    entry.element.setAttribute( 'font-family', settings.fontFamily );
-                    entry.element.setAttribute( 'font-size', settings.fontSize );
-                    entry.element.setAttribute( 'font-weight', settings.fontWeight );
-                    entry.element.setAttribute( 'font-style', settings.fontStyle );
+                    if ( typeof entryObj.fontColor != 'undefined') {
+                        entry.element.setAttribute( 'fill', entryObj.fontColor );
+                    }
+                    else {
+                        entry.element.setAttribute( 'fill', settings.fontColor );
+                    }
+                    if ( typeof entryObj.fontFamily != 'undefined') {
+                        entry.element.setAttribute( 'font-family', entryObj.fontFamily );
+                    }
+                    else {
+                        entry.element.setAttribute( 'font-family', settings.fontFamily );
+                    }
+                    if ( typeof entryObj.fontSize != 'undefined') {
+                        entry.element.setAttribute( 'font-size', entryObj.fontSize );
+                    }
+                    else {
+                        entry.element.setAttribute( 'font-size', settings.fontSize );
+                    }
+                    if ( typeof entryObj.fontWeight != 'undefined') {
+                        entry.element.setAttribute( 'font-weight', entryObj.fontWeight );
+                    }
+                    else {
+                        entry.element.setAttribute( 'font-weight', settings.fontWeight );
+                    }
+                    if ( typeof entryObj.fontStyle != 'undefined') {
+                        entry.element.setAttribute( 'font-style', entryObj.fontStyle );
+                    }
+                    else {
+                        entry.element.setAttribute( 'font-style', settings.fontStyle );
+                    }
+
                     entry.element.setAttribute( 'font-stretch', settings.fontStretch );
                     entry.element.setAttribute( 'text-anchor', 'middle' );
                     entry.element.textContent = settings.fontToUpperCase ? entryObj.label.toUpperCase() : entryObj.label;
